@@ -6,17 +6,15 @@
     <title>EAS</title>
 </head>
 <body>
-    <div id="container">hi</div>
-
+    <div id="grid-container"></div>
+    <script src="script.js"></script>
     <script>
-        const container = document.getElementById("container");
+        const gridContainer = document.getElementById("grid-container");
 
-        for (let i = 0; i < 16; i++) {
-            for (let j = 0; j < 16; j++) {
-                const square = document.createElement("div");
-                square.classList.add("square");
-                container.appendChild(square);
-            }
+        for (let i = 0; i < 256; i++) {
+            const square = document.createElement("div");
+            square.classList.add("square");
+            gridContainer.appendChild(square);
         }
     </script>
 </body>
