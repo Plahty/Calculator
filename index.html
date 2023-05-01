@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel=¨stylesheet¨ href=¨styles.css¨>
+    <title>EAS</title>
+</head>
+<body>
+    <div id="container">hi</div>
+
+    <script>
+        const container = document.getElementById("container");
+
+        for (let i = 0; i < 16; i++) {
+            for (let j = 0; j < 16; j++) {
+                const square = document.createElement("div");
+                square.classList.add("square");
+                container.appendChild(square);
+            }
+        }
+    </script>
+</body>
+</html>
