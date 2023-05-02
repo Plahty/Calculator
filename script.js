@@ -1,4 +1,5 @@
 const gridContainer = document.getElementById("grid-container");
+const resetButton = document.getElementById("reset-button");
 
 // Create the 16x16 grid
 for (let i = 0; i < 256; i++) {
@@ -10,8 +11,12 @@ for (let i = 0; i < 256; i++) {
   square.addEventListener("mouseenter", function() {
     square.style.backgroundColor = "black";
   });
-
-  square.addEventListener("mouseleave", function() {
-    square.style.backgroundColor = "red";
-  });
 }
+
+// Add event listener to reset button
+resetButton.addEventListener("click", function() {
+  const squares = document.querySelectorAll(".square");
+  squares.forEach(function(square) {
+    square.style.backgroundColor = "white";
+  });
+});
