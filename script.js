@@ -7,8 +7,8 @@ for (let i = 0; i < 256; i++) {
   square.classList.add("square");
   gridContainer.appendChild(square);
 
-  // Add a hover effect to each square
-  square.addEventListener("mouseenter", function() {
+  // Add a click event listener to each square
+  square.addEventListener("click", function() {
     square.style.backgroundColor = "black";
   });
 }
