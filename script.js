@@ -22,6 +22,7 @@ function createGrid(rows, cols) {
   // Set the grid container styles
   gridContainer.style.gridTemplateColumns = `repeat(${cols}, 1fr)`;
   gridContainer.style.gridTemplateRows = `repeat(${rows}, 1fr)`;
+  gridContainer.style.gridGap = "0"; // Set grid gap to 0
 
   // Create the squares
   for (let i = 0; i < rows * cols; i++) {
@@ -30,7 +31,8 @@ function createGrid(rows, cols) {
     gridContainer.appendChild(square);
 
     // Add event listeners to each square
-    square.addEventListener("mousedown", function() {
+    square.addEventListener("mousedown", function(event) {
+      event.preventDefault(); // Prevent the default behavior of selecting text
       isMouseDown = true;
       square.style.backgroundColor = currentColor;
     });
@@ -85,4 +87,53 @@ createGridButton.addEventListener("click", function() {
   const cols = parseInt(colsInput.value);
   createGrid(rows, cols);
 });
+
+// Initialize the grid
+createGrid(16, 16);
+
+
+
+
+
+
+
+
+
+
+
+
+im showing you my code, i want you to write code that puts the reset button on the same level as the color buttons, and remove the text from the color buttons and make them the corresponding color instead with no text. also put a little vertical line between the reset button and the color buttons. show me what my javascript, html, and css should look like with your implemented changes: 
+html:
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>EAS</title>
+    <link rel="stylesheet" href="styles.css">
+  </head>
+  <body>
+    <div class="container">
+      <div id="grid-container"></div>
+      <button id="reset-button">Reset</button>
+      <div class="buttons-container">
+        <button id="white-button">White</button>
+        <button id="black-button">Black</button>
+        <button id="red-button">Red</button>
+        <button id="orange-button">Orange</button>
+        <button id="yellow-button">Yellow</button>
+        <button id="green-button">Green</button>
+        <button id="blue-button">Blue</button>
+        <button id="purple-button">Purple</button>
+      </div>
+      <div class="inputs-container">
+        <input type="number" id="rows-input" placeholder="Rows">
+        <input type="number" id="cols-input" placeholder="Columns">
+        <button id="create-grid-button">Create Grid</button>
+      </div>
+    </div>
+    <script src="script.js"></script>
+  </body>
+</html>
+javascript:
+
+
 
