@@ -14,7 +14,7 @@ body {
   display: grid;
   grid-template-columns: repeat(16, 1fr);
   grid-template-rows: repeat(16, 1fr);
-  grid-gap: 1px;
+  grid-gap: 0;
   width: 800px;
   height: 800px;
   border: 1px solid black;
@@ -26,7 +26,7 @@ body {
   border: 1px solid black;
 }
 
-.buttons-container {
+.button-container {
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -35,23 +35,71 @@ body {
 }
 
 .color-button {
-  background-color: white;
-  border: 1px solid black;
+  border: none;
   height: 30px;
   width: 30px;
   margin-right: 10px;
 }
 
+.white {
+  background-color: white;
+}
+
+.black {
+  background-color: black;
+}
+
+.red {
+  background-color: red;
+}
+
+.orange {
+  background-color: orange;
+}
+
+.yellow {
+  background-color: yellow;
+}
+
+.green {
+  background-color: green;
+}
+
+.blue {
+  background-color: blue;
+}
+
+.purple {
+  background-color: purple;
+}
+
+.reset-container {
+  border-right: 1px solid black;
+  margin-right: 10px;
+  padding-right: 10px;
+}
+
 #reset-button {
   background-color: white;
   border: 1px solid black;
-  height: 30px;
-  width: 60px;
 }
 
-.vertical-line {
-  border-left: 1px solid black;
-  height: 30px;
-  width: 1px;
+.inputs-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+input {
   margin-right: 10px;
+}
+
+/* new CSS for thin grid lines */
+.cell {
+  border: 1px solid #ccc;
+}
+
+/* set the color of the cell to the current color */
+.cell.active {
+  background-color: var(--current-color);
 }
