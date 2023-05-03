@@ -1,3 +1,15 @@
+body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+}
+
+#container {
+  margin-top: 50px;
+}
+
 #grid-container {
   display: grid;
   grid-template-columns: repeat(16, 1fr);
@@ -6,9 +18,42 @@
   width: 800px;
   height: 800px;
   border: 1px solid black;
+  margin-bottom: 20px;
 }
 
 .square {
   background-color: white;
   border: 1px solid black;
 }
+
+.button-container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+.color-button {
+  background-color: white;
+  border: 1px solid black;
+  height: 30px;
+  width: 30px;
+  margin-right: 10px;
+}
+
+#reset-button {
+  background-color: white;
+  border: 1px solid black;
+  height: 30px;
+  width: 60px;
+}
+
+.vertical-line {
+  border-left: 1px solid black;
+  height: 30px;
+  width: 1px;
+  margin-right: 10px;
+}
+
+
