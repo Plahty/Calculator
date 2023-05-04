@@ -37,7 +37,6 @@ body {
   width: 30px;
   margin-right: 10px;
   border-radius: 0;
-  pointer-events: none;
 }
 
 .white {
@@ -336,4 +335,13 @@ input {
 /* CSS for the color buttons on focus */
 .color-container button:focus {
   outline: none;
+}
+
+.color-container button.reset-color {
+  background-color: gray;
+  color: white;
+}
+
+.color-container button.active.reset-color {
+  background-color: black;
 }

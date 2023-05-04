@@ -4,6 +4,14 @@ const colorButtons = document.querySelectorAll(".color-button:not(.reset-color)"
 const rowsInput = document.getElementById("rows-input");
 const colsInput = document.getElementById("cols-input");
 const createGridButton = document.getElementById("create-grid-button");
+const whiteButton = document.getElementById("white-button");
+const blackButton = document.getElementById("black-button");
+const redButton = document.getElementById("red-button");
+const orangeButton = document.getElementById("orange-button");
+const yellowButton = document.getElementById("yellow-button");
+const greenButton = document.getElementById("green-button");
+const blueButton = document.getElementById("blue-button");
+const purpleButton = document.getElementById("purple-button");
 
 // Default color for painting squares
 let currentColor = "black";
@@ -60,23 +68,35 @@ resetButton.addEventListener("click", () => {
   resetGrid();
 });
 
-// Event listeners for the color buttons
 colorButtons.forEach(button => {
-  button.addEventListener("click", () => {
-    currentColor = button.dataset.color;
+  button.addEventListener("mousedown", (event) => {
+    event.stopPropagation();
+    event.preventDefault(); // add this line
+  });
+  
+  button.addEventListener("click", (event) => {
+    event.stopPropagation();
+    currentColor = button.dataset.color; // add this line
     document.querySelectorAll(".color-button").forEach((btn) => {
       btn.classList.remove("active");
     });
     button.classList.add("active");
+    document.documentElement.style.setProperty('--current-color', currentColor);
+  });
+
+  button.addEventListener("mouseup", () => {
+    isPainting = false; // add this line
   });
 });
+
+
 
 // Event listener for the create grid button
 createGridButton.addEventListener("click", () => {
   resetGrid();
 });
 
-// Create the initial grid
+// Set up the initial grid
 const initialRows = 16;
 const initialCols = 16;
 createGrid(initialRows, initialCols);
