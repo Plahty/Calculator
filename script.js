@@ -1,6 +1,6 @@
 const gridContainer = document.getElementById("grid-container");
 const resetButton = document.getElementById("reset-button");
-const colorButtons = document.querySelectorAll(".color-button");
+const colorButtons = document.querySelectorAll(".color-button:not(.reset-color)");
 const rowsInput = document.getElementById("rows-input");
 const colsInput = document.getElementById("cols-input");
 const createGridButton = document.getElementById("create-grid-button");
@@ -23,15 +23,21 @@ function createGrid(rows, cols) {
     cell.classList.add("cell");
     cell.addEventListener("mousedown", () => {
       isPainting = true;
+      cell.classList.add("active");
       cell.style.backgroundColor = currentColor;
     });
     cell.addEventListener("mouseenter", () => {
       if (isPainting) {
+        cell.classList.add("active");
         cell.style.backgroundColor = currentColor;
       }
     });
     cell.addEventListener("mouseup", () => {
       isPainting = false;
+    });
+    cell.addEventListener("click", () => {
+      cell.classList.add("active");
+      cell.style.backgroundColor = currentColor;
     });
     gridContainer.appendChild(cell);
   }
@@ -58,6 +64,10 @@ resetButton.addEventListener("click", () => {
 colorButtons.forEach(button => {
   button.addEventListener("click", () => {
     currentColor = button.dataset.color;
+    document.querySelectorAll(".color-button").forEach((btn) => {
+      btn.classList.remove("active");
+    });
+    button.classList.add("active");
   });
 });
 

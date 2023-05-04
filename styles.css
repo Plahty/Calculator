@@ -37,6 +37,7 @@ body {
   width: 30px;
   margin-right: 10px;
   border-radius: 0;
+  pointer-events: none;
 }
 
 .white {
@@ -88,11 +89,7 @@ body {
   justify-content: center;
 }
 
-input {
-  margin-right: 10px;
-}
-
-/* new CSS for thin grid lines */
+/* new CSS for the thin grid lines */
 .cell {
   border: 1px solid #ccc;
 }
@@ -100,4 +97,243 @@ input {
 /* set the color of the cell to the current color */
 .cell.active {
   background-color: var(--current-color);
+}
+
+/* added styles for the color buttons */
+.color-container {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 10px;
+}
+
+.color-button.black {
+  background-color: black;
+}
+
+.color-button.white {
+  background-color: white;
+  border: 1px solid #ccc;
+}
+
+.color-button.red {
+  background-color: red;
+}
+
+.color-button.orange {
+  background-color: orange;
+}
+
+.color-button.yellow {
+  background-color: yellow;
+}
+
+.color-button.green {
+  background-color: green;
+}
+
+.color-button.blue {
+  background-color: blue;
+}
+
+.color-button.purple {
+  background-color: purple;
+}
+
+.color-button:hover {
+  border: 1px solid #ccc;
+  cursor: pointer;
+}
+
+.color-button:focus {
+  outline: none;
+}
+
+/* added styles for the color buttons container */
+.color-container {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 10px;
+}
+
+.color-container button {
+  margin: 0 5px;
+  border-radius: 3px;
+  border: none;
+}
+
+.color-container button.active {
+  border: 2px solid white;
+  box-shadow: 0px 0px 5px white;
+}
+
+.color-container button.white {
+  background-color: white;
+}
+
+.color-container button.black {
+  background-color: black;
+}
+
+.color-container button.red {
+  background-color: red;
+}
+
+.color-container button.orange {
+  background-color: orange;
+}
+
+.color-container button.yellow {
+  background-color: yellow;
+}
+
+.color-container button.green {
+  background-color: green;
+}
+
+.color-container button.blue {
+  background-color: blue;
+}
+
+.color-container button.purple {
+  background-color: purple;
+}
+
+/* added style for the active cell */
+.cell.active {
+  background-color: var(--current-color);
+}
+
+/* new CSS for the cursor */
+.cell {
+  cursor: pointer;
+}
+
+/* make the color buttons round */
+.color-button {
+  border-radius: 50%;
+}
+
+/* add transition to the active cell background-color property */
+.cell.active {
+  transition: background-color 0.2s ease-in-out;
+}
+
+/* CSS for the container element */
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 50px;
+  margin-bottom: 20px;
+}
+
+/* CSS for the grid container */
+#grid-container {
+  display: grid;
+  grid-gap: 0;
+  width: 800px;
+  height: 800px;
+  border: 1px solid black;
+}
+
+/* CSS for the grid cells */
+.cell {
+  border: 1px solid #ccc;
+}
+
+/* CSS for the reset button container */
+.reset-container {
+  border-right: 1px solid black;
+  margin-right: 10px;
+  padding-right: 10px;
+}
+
+/* CSS for the reset button */
+#reset-button {
+  background-color: white;
+  border: 1px solid black;
+}
+
+/* CSS for the inputs container */
+.inputs-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* CSS for the input elements */
+input {
+  margin-right: 10px;
+}
+
+/* CSS for the color buttons container */
+.color-container {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 10px;
+}
+
+/* CSS for the color buttons */
+.color-container button {
+  margin: 0 5px;
+  border-radius: 3px;
+  border: none;
+}
+
+/* CSS for the active color button */
+.color-container button.active {
+  border: 2px solid white;
+  box-shadow: 0px 0px 5px white;
+}
+
+/* CSS for the white color button */
+.color-container button.white {
+  background-color: white;
+  border: 1px solid #ccc;
+}
+
+/* CSS for the black color button */
+.color-container button.black {
+  background-color: black;
+}
+
+/* CSS for the red color button */
+.color-container button.red {
+  background-color: red;
+}
+
+/* CSS for the orange color button */
+.color-container button.orange {
+  background-color: orange;
+}
+
+/* CSS for the yellow color button */
+.color-container button.yellow {
+  background-color: yellow;
+}
+
+/* CSS for the green color button */
+.color-container button.green {
+  background-color: green;
+}
+
+/* CSS for the blue color button */
+.color-container button.blue {
+  background-color: blue;
+}
+
+/* CSS for the purple color button */
+.color-container button.purple {
+  background-color: purple;
+}
+
+/* CSS for the color buttons on hover */
+.color-container button:hover {
+  border: 1px solid #ccc;
+  cursor: pointer;
+}
+
+/* CSS for the color buttons on focus */
+.color-container button:focus {
+  outline: none;
 }
